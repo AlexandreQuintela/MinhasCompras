@@ -33,7 +33,7 @@ public class SqLiteDatabaseHelper
     }
     public Task<List<Produto>> Search(string query)
     {
-        string sql = $"select * from Produto WHERE Descricao like='%{query}%'";
+        string sql = $"select * from Produto WHERE Descricao like '%{query}%'";
         return _conn.QueryAsync<Produto>(sql);
     }
 }
