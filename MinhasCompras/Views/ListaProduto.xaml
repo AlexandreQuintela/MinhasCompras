@@ -11,14 +11,13 @@
         <SearchBar x:Name="txt_search"
                    TextChanged="txt_search_TextChanged"
                    Placeholder="Busca de Produtos" />
-        <ListView x:Name="lst_produtos">
+        <ListView x:Name="lst_produtos" ItemSelected="lst_produtos_ItemSelected">
             <ListView.Header>
-                <Grid ColumnDefinitions="*, *, *, *, *">
-                    <Label Grid.Column="0" Text="ID"/>
-                    <Label Grid.Column="1" Text="Descrição"/>
-                    <Label Grid.Column="2" Text="Preço"/>
-                    <Label Grid.Column="3" Text="Qtd"/>
-                    <Label Grid.Column="4" Text="Total"/>
+                <Grid ColumnDefinitions="*, *, *, *">
+                    <Label Grid.Column="0" Text="Descrição"/>
+                    <Label Grid.Column="1" Text="Preço"/>
+                    <Label Grid.Column="2" Text="Qtd"/>
+                    <Label Grid.Column="3" Text="Total"/>
                 </Grid>
             </ListView.Header>
             <ListView.ItemTemplate>
@@ -27,12 +26,11 @@
                         <ViewCell.ContextActions>
                             <MenuItem Text="Remover" Clicked="MenuItem_Remover"/>
                         </ViewCell.ContextActions>
-                        <Grid ColumnDefinitions="*, *, *, *, *">
-                            <Label Grid.Column="0" Text="{Binding Id}"/>
-                            <Label Grid.Column="1" Text="{Binding Descricao}"/>
-                            <Label Grid.Column="2" Text="{Binding Preco}"/>
-                            <Label Grid.Column="3" Text="{Binding Quantidade}"/>
-                            <Label Grid.Column="4" Text="{Binding Total}"/>
+                        <Grid ColumnDefinitions="*, *, *, *">
+                            <Label Grid.Column="0" Text="{Binding Descricao}"/>
+                            <Label Grid.Column="1" Text="{Binding Preco}"/>
+                            <Label Grid.Column="2" Text="{Binding Quantidade}"/>
+                            <Label Grid.Column="3" Text="{Binding Total}"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
